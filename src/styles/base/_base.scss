@@ -1,0 +1,28 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: $m-size;
+}
+
+button {
+    cursor: pointer;
+    &:disabled {
+        cursor: default
+    }
+}
+
+.is-active{
+  font-weight: bold;
+}
+
+/*button { /*test do autoprefixer
+    background: linear-gradient(to bottom, white, black);
+    border-radius: 2px;
+}
+
+.teest {
+    font-size: responsive;
+}*/
