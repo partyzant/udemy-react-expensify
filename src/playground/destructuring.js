@@ -1,17 +1,17 @@
 // object destructuring
-/*const person = {
-  name: 'Dupa',
-  age: 23423,
+const person = {
+  name: 'Juka',
+  age: 16,
   location: {
     city: 'Chujnia',
     temp: -32323
   }
 };
 
-const {name: firstName = 'anonymus', age} = person;
+const { name: firstName = 'anonymus', age } = person;
 console.log(`${firstName} is ${age}`);
 
-const {city, temp: temperature} = person.location;
+const { city, temp: temperature } = person.location;
 console.log(`it's ${temperature} in ${city}`);
 
 
@@ -23,9 +23,9 @@ const book = {
   }
 };
 
-const {name: publisherName = 'chuj go wie'} = book.publisher;
+const { name: publisherName = 'chuj go wie' } = book.publisher;
 console.log(publisherName);
-*/
+
 
 
 // array destructuring
@@ -37,5 +37,5 @@ console.log(`You are in ${city} ${state}`);
 
 const item = ['Coffee', '4', '6', '10'];
 
-const [prod, ,price] = item;
+const [prod, , price] = item;
 console.log(`A medium ${prod} costs ${price}`);
