@@ -7,6 +7,7 @@ const Info = (props) => (
   <div>
     <h1>Info</h1>
     <p>Te info : {props.info}</p>
+    <p>is auth {props.dupa}</p>
   </div>
 );
 
@@ -32,4 +33,4 @@ const AdminInfo = withAdminWarning(Info);
 const AuthInfo = requireAuthentication(Info);
 
 // ReactDOM.render(<AdminInfo isAdmin={true} info="xxxx" />, document.getElementById("app"));
-ReactDOM.render(<AuthInfo isAuthenticated={true} info="xxxx" />, document.getElementById("app"));
+ReactDOM.render(<AuthInfo isAuthenticated={true} dupa="cipa" info="xxxx" />, document.getElementById("app"));
