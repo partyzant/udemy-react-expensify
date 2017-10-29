@@ -21,6 +21,7 @@ const withAdminWarning = (WrappedComponent) => {
 };
 
 const requireAuthentication = (WrappedComponent) => {
+  // console.log(props) -error props is not defined
   return (props) => (
     <div>
       {props.isAuthenticated ? <WrappedComponent {...props}/> : <p>zaloguj się!</p>}

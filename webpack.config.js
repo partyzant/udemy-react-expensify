@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  // entry: './src/playground/hoc.js',
   entry: './src/app.js',
   output: {
     path: path.join(__dirname, 'public'),
@@ -14,7 +15,7 @@ module.exports = {
     },
     {
       test: /\.s?css$/,
-      exclude: /node_modules\/(?!(normalize\.css)\/).*/,
+      // exclude: /node_modules\/(?!(normalize\.css)\/).*/,
       use: [
         {
           loader: 'style-loader',
