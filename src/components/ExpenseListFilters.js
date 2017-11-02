@@ -4,15 +4,17 @@ import {setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate} from 
 import moment from 'moment';
 import 'react-dates/initialize';
 import {DateRangePicker} from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
+// import 'react-dates/lib/css/_datepicker.css';
 
 class ExpenseListFilters extends React.Component {
   state = {
     focusedInput: null
   };
   onDatesChange = ({ startDate, endDate }) => {
-    this.props.dispatch(setStartDate(startDate ? moment(startDate).valueOf() : undefined));
-    this.props.dispatch(setEndDate(setEndDate ? moment(endDate).valueOf() : undefined));
+    // console.log(setStartDate(startDate))
+    // console.log(setEndDate(endDate))
+    this.props.dispatch(setStartDate(startDate));
+    this.props.dispatch(setEndDate(endDate));
   };
   render() {
     return(
@@ -35,12 +37,13 @@ class ExpenseListFilters extends React.Component {
         </select>
         <br/>
         <DateRangePicker
-          startDate={moment(this.props.filters.startDate)} // momentPropTypes.momentObj or null,
-          endDate={moment(this.props.filters.endDate)} // momentPropTypes.momentObj or null,
+          startDate={this.props.filters.startDate} // momentPropTypes.momentObj or null,
+          endDate={this.props.filters.endDate} // momentPropTypes.momentObj or null,
           onDatesChange={this.onDatesChange} // PropTypes.func.isRequired,
           focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
           onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
           isOutsideRange={() => false}
+          numberOfMonths={1}
           showClearDates={true}
         />
       </div>
