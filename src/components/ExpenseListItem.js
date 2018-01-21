@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-export default ( { id, description, amount, createdAt } ) => {
+const ExpenseListItem = ( { id, description, amount, createdAt } ) => {
   return(
   <div>
       <h3>
@@ -13,4 +13,5 @@ export default ( { id, description, amount, createdAt } ) => {
   </div>
 );
 }
-// export default ExpenseListItem;
+
+export default ExpenseListItem;

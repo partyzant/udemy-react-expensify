@@ -2,9 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import 'react-dates/initialize';
 import {SingleDatePicker} from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
 
-moment.locale('pl');
+moment().locale('pl');
 const now = moment();
 // console.log(now.format('MMM Do, YYYY'))
 
@@ -26,9 +25,10 @@ export default class ExpenseForm extends React.Component {
     this.setState(() => ({description}));
   };
   onNoteChange = (e) => {
-    // const note = e.target.value;
-    e.persist(); // alternatywny sposób przekazywania wartości
-    this.setState(() => ({note: e.target.value}));
+    const note = e.target.value;
+    // e.persist(); // alternatywny sposób przekazywania wartości
+    // this.setState(() => ({note: e.target.value}));
+    this.setState(() => ({note}));
   };
   onAmountChange = (e) => {
     const amount = e.target.value;
@@ -41,6 +41,9 @@ export default class ExpenseForm extends React.Component {
     if(createdAt) {
       this.setState({ createdAt })
     }
+  };
+  onFocusChange = ({ focused }) => {
+    this.setState({ calendarFocused: focused });
   };
   onSubmit = (e) => {
     e.preventDefault();
@@ -79,7 +82,7 @@ export default class ExpenseForm extends React.Component {
             date={this.state.createdAt} // momentPropTypes.momentObj or null
             onDateChange={this.onDateChange} // PropTypes.func.isRequired
             focused={this.state.calendarFocused} // PropTypes.bool
-            onFocusChange={({ focused }) => this.setState({ calendarFocused: focused })} // PropTypes.func.isRequired
+            onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
             numberOfMonths={1}
             isOutsideRange={() => false}
           /><br/>
