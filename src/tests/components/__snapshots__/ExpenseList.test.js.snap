@@ -2,6 +2,12 @@
 
 exports[`should render ExpenseList with expenses 1`] = `
 <div>
+  <div>
+    <ExpensesSummary
+      expenseCount={3}
+      expensesTotal={114195}
+    />
+  </div>
   <ExpenseListItem
     amount={195}
     createdAt={0}
@@ -31,6 +37,12 @@ exports[`should render ExpenseList with expenses 1`] = `
 
 exports[`should render ExpensesList with empty message 1`] = `
 <div>
+  <div>
+    <ExpensesSummary
+      expenseCount={0}
+      expensesTotal={0}
+    />
+  </div>
   <p>
     No expenses
   </p>
